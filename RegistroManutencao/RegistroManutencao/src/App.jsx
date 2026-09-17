@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import NavBar from './components/NavBar'
+import FormManutencao from './components/FormManutencao'
+import TabelaManutencoes from './components/TabelaManutencoes'
 
 function App() {
 
@@ -17,13 +19,26 @@ function App() {
 
         {abaAtiva === 'registro' && (
           <section>
-            <h1>Registro de Manutenção</h1>
+
+            <h1 className="mb-4">Registro de Manutenção</h1>
+
+            <FormManutencao
+              manutencoes={manutencoes}
+              setManutencoes={setManutencoes}
+            />
+
+            <TabelaManutencoes manutencoes={manutencoes} />
+
           </section>
         )}
 
         {abaAtiva === 'historico' && (
           <section>
-            <h1>Histórico de Manutenções</h1>
+
+            <h1 className="mb-4">Histórico de Manutenções</h1>
+
+            <TabelaManutencoes manutencoes={manutencoes} />
+            
           </section>
         )}
 
