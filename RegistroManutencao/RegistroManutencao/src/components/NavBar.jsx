@@ -1,37 +1,33 @@
-function NavBar({ abaAtiva, setAbaAtiva}){
-    return(
-        <nav className="navbar navbar-expand-lg bgldrak">
-            <div className="container">
-                <span className="navbar-brand text-white">
-                    Registro de Manutenção
-                </span>
+function NavBar({ abaAtiva, setAbaAtiva }) {
+  return (
+    <nav className="navbar navbar-dark bg-dark">
+      <div className="container">
 
-                <div className="navbar-nav">
-                    <button
-                        className={`nav-link ${
-                            abaAtiva === 'registro'
-                            ? 'active text-white'
-                            : 'text-white'
-                        }`}
-                        onClick={() => setAbaAtiva('registro')}
-                        >
-                            Registro
-                    </button>
+        <span className="navbar-brand">
+          Registro de Manutenção
+        </span>
 
-                    <button
-                        className={`nav-link ${                                
-                            abaAtiva === 'historico'
-                            ? 'active text-white'
-                            : 'text-white'
-                        }`}
-                        onClick={() => setAbaAtiva ('historico')}
-                        >
-                            Histórico
-                    </button>
-                </div>
-            </div>
-        </nav>
-    )
+        <div className="navbar-nav d-flex flex-row">
+
+          <button
+            className="nav-link me-3"
+            onClick={() => setAbaAtiva('registro')}
+          >
+            Registro
+          </button>
+
+          <button
+            className="nav-link"
+            onClick={() => setAbaAtiva('historico')}
+          >
+            Histórico
+          </button>
+
+        </div>
+
+      </div>
+    </nav>
+  )
 }
 
 export default NavBar
